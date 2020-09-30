@@ -21,7 +21,6 @@ const Login = () => {
                 // console.log(res);
                 setLoggedInUser(res);
                 storeAuthToken();
-                history.replace(from);
             })
             .catch(err => {
                 // console.log(err);
@@ -33,6 +32,7 @@ const Login = () => {
         authToken()
             .then(res => {
                 sessionStorage.setItem('token', res);
+                history.replace(from);
             })
             .catch(err => {
                 //error
